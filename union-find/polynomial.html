@@ -1,0 +1,28 @@
+<html>
+<body>
+	<script>
+		var nodes = []
+
+		function union(n1, n2) {
+			var nv1 = nodes[n1]
+			var nv2 = nodes[n2]
+			if( nodes[n2] !== nv1) {
+				for( var i = 0; i < nodes.length; i++) {
+					if(nodes[i] === nv1)
+						nodes[i] = nv2
+				}
+			}
+		}
+
+		function connected(n1, n2) {
+			return (nodes[n1] === nodes[n2])
+		}
+
+		function init() {
+			for(var i = 0; i < 20; i++) {
+				nodes.push(i)
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<body>
+	<script>
+		var nodes = []
+
+		function union(n1, n2) {
+			var n1Root = findRoot(nodes[n1])
+			var n2Root = findRoot(nodes[n2])
+			nodes[n1Root] = n2Root
+		}
+
+		function findRoot(n) {
+			if(nodes[n] === n)
+				return n
+			else
+				return findRoot(nodes[n])
+		}
+
+		function connected(n1, n2) {
+			return (findRoot(n1) === findRoot(n2))
+		}
+
+		function init() {
+			for(var i = 0; i < 10; i++) {
+				nodes.push(i)
+			}
+		}
+	</script>
+</body>
+</html>
